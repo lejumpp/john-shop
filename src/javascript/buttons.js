@@ -9,6 +9,6 @@ var btns= document.getElementsByClassName("btnsnackitem");
         localStorage.setItem(this.getAttribute("id"),amt);
         });
     }
-
-
+    
+    
 

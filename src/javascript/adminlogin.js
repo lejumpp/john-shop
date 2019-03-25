@@ -8,7 +8,7 @@ function check(form)
             else if(form.userid.value == "kimone" && form.pswrd.value=="despise")
             {
                 alert("Login Successful Kimone");
-                window.location.href = '\adminpage.html'
+                window.location.href = '\adminpage.html'   
             }
             else
             {
