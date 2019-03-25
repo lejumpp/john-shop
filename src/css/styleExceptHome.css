@@ -40,14 +40,14 @@
 
 .footer
 {
-    position: absolute;
- bottom: 0;
+	position: absolute;
+    bottom: 0;
+    left: 0;
     width:100%;
-
-  background-color: #008080;
-  text-align: center;
-  padding: .05%;
-  border-radius: 30px 30px 30px 30px;
+    background-color: #008080;
+    text-align: center;
+    padding: .05%;
+    border-radius: 30px 30px 30px 30px;
 }
 
 h3 {
