@@ -1,6 +1,5 @@
 //Counter for grand total of order
 var orderTotal=0;
-
 //validates checkout form entry and creates order after checkout
 function checkout(form)
 {
@@ -13,8 +12,9 @@ function checkout(form)
             "studentID":form.studentID.value, "firstName":form.firstName.value, "lastName":form.lastName.value, "location":form.location.value
         }
             createOrderObj(studentObj);
-            location.reload();
+            //location.reload();
             alert("Thank You for Placing Your Order!");
+            location.href = "home.html";
         } 
         else {
             alert('Unable to place order due to empty cart');

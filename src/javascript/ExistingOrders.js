@@ -1,3 +1,10 @@
+if("listOfOrders" in localStorage){
+
+}
+else{
+    alert('There are currently no orders');
+}
+
 var listOfOrders = JSON.parse(localStorage.getItem("listOfOrders"));
 
 //initialize variable to hold panel id to be modified to yeild a unique id for each panel
