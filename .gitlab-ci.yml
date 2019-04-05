@@ -1,0 +1,12 @@
+# .gitlab-ci.yml
+image: node:9.11.1
+
+before_script:
+  - yarn install
+
+test:
+  stage: test
+  cache:
+    paths:
+    - node_modules/
+    - .yarn

@@ -1,3 +1,7 @@
+/**
+*This is a description of the script that is ran on the homepage
+*@function
+*/
 var btns= document.getElementsByClassName("btnsnackitem");
     for(var i=0; i<btns.length; i++)
     {

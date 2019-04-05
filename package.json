@@ -1,0 +1,9 @@
+{
+  "name": "JOHNSHOP",
+  "version": "1.0.0",
+  "description": "john snack shop",
+  "main": "src/home.html",
+  "repository": "https://lejumpp:Tooltime1996@github.com/lejumpp/john-shop.git",
+  "author": "lejumpp & kimone9",
+  "license": "MIT"
+}
