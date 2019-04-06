@@ -59,7 +59,7 @@ function calculateTotal(qunatity,price)
     
 };
 
-function almonds()//creates row with order item details in cart table if almond snack is ordered
+function printCart(itemName, price)
 {
     var table = document.getElementById("cart");
         var row = table.insertRow();
@@ -68,259 +68,80 @@ function almonds()//creates row with order item details in cart table if almond 
         var cell4 = row.insertCell(1);
         var cell2 = row.insertCell(2);
         var cell3 = row.insertCell(3);
-        
-        cell1.innerHTML = "Almonds";
-        cell2.innerHTML = localStorage.almond;
-        cell3.innerHTML = "$"+80 * localStorage.almond;
-        cell4.innerHTML = "$"+80;
+        var amt=localStorage.getItem(itemName)
+        cell1.innerHTML = itemName;
+        cell2.innerHTML = localStorage.getItem(itemName);
+        cell3.innerHTML = "$"+price * amt;
+        cell4.innerHTML = "$"+price;
         
         var orderDetail={
-            "itemName":"Almonds", "itemQuauntity":localStorage.almond, "subtotal":calculateTotal(localStorage.almond,80) 
+            "itemName":itemName, "itemQuauntity":localStorage.getItem(itemName), "subtotal":calculateTotal(amt,price)
         }
         addToOrderDetail(orderDetail);  
-        localStorage.removeItem('almond');
+        localStorage.removeItem(itemName);
+
+
+};
+
+function almonds()//creates row with order item details in cart table if almond snack is ordered
+{
+    printCart("almond",80)
 };
 
 function bananaChips()//creates row with order item details in cart table if banana chips snack is ordered
 {
-    var table = document.getElementById("cart");
-        var row = table.insertRow();
-        row.style.background = "rgba(204, 85, 0, 0.5)";
-        var cell1 = row.insertCell(0);
-        var cell4 = row.insertCell(1);
-        var cell2 = row.insertCell(2);
-        var cell3 = row.insertCell(3);
-        
-        cell1.innerHTML = "Banana Chips";
-        cell2.innerHTML = localStorage.banana;
-        cell3.innerHTML = "$"+70 * localStorage.banana;
-        cell4.innerHTML = "$"+70;
-        
-        var orderDetail={
-            "itemName":"Banana Chips", "itemQuauntity":localStorage.banana, "subtotal":calculateTotal(localStorage.banana,70) 
-        }
-        addToOrderDetail(orderDetail);
-        localStorage.removeItem('banana');
+    printCart("banana",70)
+
 };
 
 function bigFoot()//creates row with order item details in cart table if big foot snack is ordered
 {
-    var table = document.getElementById("cart");
-        var row = table.insertRow();
-        row.style.background = "rgba(204, 85, 0, 0.5)";
-        var cell1 = row.insertCell(0);
-        var cell4 = row.insertCell(1);
-        var cell2 = row.insertCell(2);
-        var cell3 = row.insertCell(3);
-        
-        cell1.innerHTML = "Big Foot";
-        cell2.innerHTML = localStorage.bigFoot;
-        cell3.innerHTML = "$"+50 * localStorage.bigFoot;
-        cell4.innerHTML = "$"+50;
-        
-        var orderDetail={
-            "itemName":"Big Foot", "itemQuauntity":localStorage.bigFoot, "subtotal":calculateTotal(localStorage.bigFoot,50) 
-        }
-        addToOrderDetail(orderDetail);
-        localStorage.removeItem('bigFoot');
+    printCart("bigFoot",50)
 };
 
 function cheetos()//creates row with order item details in cart table if cheetos snack is ordered
 {
-    var table = document.getElementById("cart");
-        var row = table.insertRow();
-        row.style.background = "rgba(204, 85, 0, 0.5)";
-        var cell1 = row.insertCell(0);
-        var cell4 = row.insertCell(1);
-        var cell2 = row.insertCell(2);
-        var cell3 = row.insertCell(3);
-        
-        cell1.innerHTML = "Cheetos";
-        cell2.innerHTML = localStorage.cheetos;
-        cell3.innerHTML = "$"+120 * localStorage.cheetos;
-        cell4.innerHTML = "$"+120;
-        
-        var orderDetail={
-            "itemName":"Cheetos", "itemQuauntity":localStorage.cheetos, "subtotal":calculateTotal(localStorage.cheetos,120) 
-        }
-        addToOrderDetail(orderDetail);
-        localStorage.removeItem('cheetos');
+    printCart("cheetos",120)
 };
 
 function cheezIt()//creates row with order item details in cart table if cheezit snack is ordered
 {
-    var table = document.getElementById("cart");
-        var row = table.insertRow();
-        row.style.background = "rgba(204, 85, 0, 0.5)";
-        var cell1 = row.insertCell(0);
-        var cell4 = row.insertCell(1);
-        var cell2 = row.insertCell(2);
-        var cell3 = row.insertCell(3);
-        
-        cell1.innerHTML = "CheezIT";
-        cell2.innerHTML = localStorage.cheezit;
-        cell3.innerHTML = "$"+100 * localStorage.cheezit;
-        cell4.innerHTML = "$"+100;
-        
-        var orderDetail={
-            "itemName":"CheezIT", "itemQuauntity":localStorage.cheezit, "subtotal":calculateTotal(localStorage.cheezit,100) 
-        }
-        addToOrderDetail(orderDetail);
-        localStorage.removeItem('cheezit');
+    printCart("cheezit",100)
 };
 
 function lays()//creates row with order item details in cart table if lays snack is ordered
 {
-    var table = document.getElementById("cart");
-        var row = table.insertRow();
-        row.style.background = "rgba(204, 85, 0, 0.5)";
-        var cell1 = row.insertCell(0);
-        var cell4 = row.insertCell(1);
-        var cell2 = row.insertCell(2);
-        var cell3 = row.insertCell(3);
-        
-        cell1.innerHTML = "Lays";
-        cell2.innerHTML = localStorage.lays;
-        cell3.innerHTML = "$"+150 * localStorage.lays;
-        cell4.innerHTML = "$"+150;
-        
-        var orderDetail={
-            "itemName":"Lays", "itemQuauntity":localStorage.lays, "subtotal":calculateTotal(localStorage.lays,150) 
-        }
-        addToOrderDetail(orderDetail);
-        localStorage.removeItem('lays');
+    printCart("lays",150)
 };
 
 function fritos()//creates row with order item details in cart table if fritos snack is ordered
 {
-    var table = document.getElementById("cart");
-        var row = table.insertRow();
-        row.style.background = "rgba(204, 85, 0, 0.5)";
-        var cell1 = row.insertCell(0);
-        var cell4 = row.insertCell(1);
-        var cell2 = row.insertCell(2);
-        var cell3 = row.insertCell(3);
-        
-        cell1.innerHTML = "Fritos";
-        cell2.innerHTML = localStorage.fritos;
-        cell3.innerHTML = "$"+130 * localStorage.fritos;
-        cell4.innerHTML = "$"+130;
-        
-        var orderDetail={
-            "itemName":"Fritos", "itemQuauntity":localStorage.fritos, "subtotal":calculateTotal(localStorage.fritos,130) 
-        }
-        addToOrderDetail(orderDetail);
-        localStorage.removeItem('fritos');
+    printCart("fritos",130)
 };
 
 function plantainChips()//creates row with order item details in cart table if plantain chips snack is ordered
 {
-     var table = document.getElementById("cart");
-        var row = table.insertRow();
-        row.style.background = "rgba(204, 85, 0, 0.5)";
-        var cell1 = row.insertCell(0);
-        var cell4 = row.insertCell(1);
-        var cell2 = row.insertCell(2);
-        var cell3 = row.insertCell(3);
-        
-        cell1.innerHTML = "Plantain Chips";
-        cell2.innerHTML = localStorage.plantain;
-        cell3.innerHTML = "$"+100 * localStorage.plantain;
-        cell4.innerHTML = "$"+100;
-        
-        var orderDetail={
-            "itemName":"Plantain Chips", "itemQuauntity":localStorage.plantain, "subtotal":calculateTotal(localStorage.plantain,100) 
-        }
-        addToOrderDetail(orderDetail);
-        localStorage.removeItem('plantain');
+    printCart("plantain",100)
 };
 
 function pringles()//creates row with order item details in cart table if pringles snack is ordered
 {
-    var table = document.getElementById("cart");
-        var row = table.insertRow();
-        row.style.background = "rgba(204, 85, 0, 0.5)";
-        var cell1 = row.insertCell(0);
-        var cell4 = row.insertCell(1);
-        var cell2 = row.insertCell(2);
-        var cell3 = row.insertCell(3);
-        
-        cell1.innerHTML = "Pringles";
-        cell2.innerHTML = localStorage.pringles;
-        cell3.innerHTML = "$"+180 * localStorage.pringles;
-        cell4.innerHTML = "$"+180;
-        
-        var orderDetail={
-            "itemName":"Pringles", "itemQuauntity":localStorage.pringles, "subtotal":calculateTotal(localStorage.pringles,180) 
-        }
-        addToOrderDetail(orderDetail);
-        localStorage.removeItem('pringles');
+    printCart("pringles",180)
 };
 
 function redHot()//creates row with order item details in cart table if red hot snack is ordered
 {
-    var table = document.getElementById("cart");
-        var row = table.insertRow();
-        row.style.background = "rgba(204, 85, 0, 0.5)";
-        var cell1 = row.insertCell(0);
-        var cell4 = row.insertCell(1);
-        var cell2 = row.insertCell(2);
-        var cell3 = row.insertCell(3);
-        
-        cell1.innerHTML = "Red Hot";
-        cell2.innerHTML = localStorage.redhot;
-        cell3.innerHTML = "$"+90 * localStorage.redhot;
-        cell4.innerHTML = "$"+90;
-        
-        var orderDetail={
-            "itemName":"Red Hot", "itemQuauntity":localStorage.redhot, "subtotal":calculateTotal(localStorage.redhot,90) 
-        }
-        addToOrderDetail(orderDetail);
-        localStorage.removeItem('redhot');
+    printCart("redhot",90)
 };
 
 function ruffles()//creates row with order item details in cart table if ruffles snack is ordered
 {
-    var table = document.getElementById("cart");
-        var row = table.insertRow();
-        row.style.background = "rgba(204, 85, 0, 0.5)";
-        var cell1 = row.insertCell(0);
-        var cell4 = row.insertCell(1);
-        var cell2 = row.insertCell(2);
-        var cell3 = row.insertCell(3);
-        
-        cell1.innerHTML = "Ruffles";
-        cell2.innerHTML = localStorage.ruffles;
-        cell3.innerHTML = "$"+120 * localStorage.ruffles;
-        cell4.innerHTML = "$"+120;
-        
-        var orderDetail={
-            "itemName":"Ruffles", "itemQuauntity":localStorage.ruffles, "subtotal":calculateTotal(localStorage.ruffles,120) 
-        }
-        addToOrderDetail(orderDetail);
-        localStorage.removeItem('ruffles');
+    printCart("ruffles",120)
 };
 
 function skittles()//creates row with order item details in cart table if skittles snack is ordered
 {
-    var table = document.getElementById("cart");
-        var row = table.insertRow();
-        row.style.background = "rgba(204, 85, 0, 0.5)";
-        var cell1 = row.insertCell(0);
-        var cell4 = row.insertCell(1);
-        var cell2 = row.insertCell(2);
-        var cell3 = row.insertCell(3);
-        
-        cell1.innerHTML = "Skittles";
-        cell2.innerHTML = localStorage.skittles;
-        cell3.innerHTML = "$"+150 * localStorage.skittles;
-        cell4.innerHTML = "$"+150
-        
-        var orderDetail={
-            "itemName":"Skittles", "itemQuauntity":localStorage.skittles, "subtotal":calculateTotal(localStorage.skittles,150) 
-        }
-        addToOrderDetail(orderDetail);
-        localStorage.removeItem('skittles');
+    printCart("skittles",150)
 };
 
     if (localStorage.almond > 0) {

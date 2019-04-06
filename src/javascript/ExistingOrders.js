@@ -107,11 +107,4 @@ function removeOrder() {
 
     //call removeOrder function with BUTTON element is clicked
     button.onclick = removeOrder;
-
-
-
-
-
-               });
-
-
+});
