@@ -90,7 +90,7 @@ function almonds()//creates row with order item details in cart table if almond 
 
 function bananaChips()//creates row with order item details in cart table if banana chips snack is ordered
 {
-    printCart("banana",70)
+    printCart("bananaChips",70)
 
 };
 
@@ -121,7 +121,7 @@ function fritos()//creates row with order item details in cart table if fritos s
 
 function plantainChips()//creates row with order item details in cart table if plantain chips snack is ordered
 {
-    printCart("plantain",100)
+    printCart("plantainChips",100)
 };
 
 function pringles()//creates row with order item details in cart table if pringles snack is ordered
@@ -148,7 +148,7 @@ function skittles()//creates row with order item details in cart table if skittl
         almonds();
     }
 
-    if (localStorage.banana > 0) {
+    if (localStorage.bananaChips > 0) {
         bananaChips();
     }
 
@@ -172,7 +172,7 @@ function skittles()//creates row with order item details in cart table if skittl
         fritos();
     }
 
-    if (localStorage.plantain > 0) {
+    if (localStorage.plantainChips > 0) {
        plantainChips();
     }
 
