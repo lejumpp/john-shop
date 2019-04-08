@@ -6,13 +6,8 @@ function checkout(form)
     //check if form entries are empty
     if(form.studentID.value != "" && form.firstName.value!="" && form.lastName.value != "" && form.location.value!="")
     {
-        
         if("orderDetails" in localStorage){
-            var studentObj = {
-            "studentID":form.studentID.value, "firstName":form.firstName.value, "lastName":form.lastName.value, "location":form.location.value
-        }
-            createOrderObj(studentObj);
-            //location.reload();
+            createOrderObj(createStudentObj(form));
             alert("Thank You for Placing Your Order!");
             location.href = "home.html";
         } 
@@ -34,6 +29,13 @@ function createOrderObj(studentObj)
     listofOrdersFunction(orderObjTemp);   
 };
 
+function createStudentObj(form)
+{
+    var studentObj = {
+            "studentID":form.studentID.value, "firstName":form.firstName.value, "lastName":form.lastName.value, "location":form.location.value
+        }
+    return studentObj;
+};
 
 function listofOrdersFunction(orderObj)//function to store the student object
 {
@@ -83,114 +85,53 @@ function printCart(itemName, price)
 
 };
 
-function almonds()//creates row with order item details in cart table if almond snack is ordered
-{
-    printCart("almond",80)
-};
+if (localStorage.almond > 0) {
+    printCart("almond",80);
+}
 
-function bananaChips()//creates row with order item details in cart table if banana chips snack is ordered
-{
-    printCart("bananaChips",70)
+if (localStorage.bananaChips > 0) {
+    printCart("bananaChips",70);
+}
 
-};
+if (localStorage.bigFoot > 0) {
+     printCart("bigFoot",50);
+}
 
-function bigFoot()//creates row with order item details in cart table if big foot snack is ordered
-{
-    printCart("bigFoot",50)
-};
+if (localStorage.cheetos > 0) {
+    printCart("cheetos",120);
+}
 
-function cheetos()//creates row with order item details in cart table if cheetos snack is ordered
-{
-    printCart("cheetos",120)
-};
+if (localStorage.cheezit > 0) {
+    printCart("cheezit",100);
+}
 
-function cheezIt()//creates row with order item details in cart table if cheezit snack is ordered
-{
-    printCart("cheezit",100)
-};
+if (localStorage.lays > 0) {
+    printCart("lays",150);
+}
 
-function lays()//creates row with order item details in cart table if lays snack is ordered
-{
-    printCart("lays",150)
-};
+if (localStorage.fritos > 0) {
+    printCart("fritos",130);
+}
 
-function fritos()//creates row with order item details in cart table if fritos snack is ordered
-{
-    printCart("fritos",130)
-};
+if (localStorage.plantainChips > 0) {
+   printCart("plantainChips",100);
+}
 
-function plantainChips()//creates row with order item details in cart table if plantain chips snack is ordered
-{
-    printCart("plantainChips",100)
-};
+if (localStorage.pringles > 0) {
+    printCart("pringles",180);
+}
 
-function pringles()//creates row with order item details in cart table if pringles snack is ordered
-{
-    printCart("pringles",180)
-};
+if (localStorage.redhot > 0) {
+    printCart("redhot",90);
+}
 
-function redHot()//creates row with order item details in cart table if red hot snack is ordered
-{
-    printCart("redhot",90)
-};
+if (localStorage.ruffles > 0) {
+    printCart("ruffles",120);
+}
 
-function ruffles()//creates row with order item details in cart table if ruffles snack is ordered
-{
-    printCart("ruffles",120)
-};
-
-function skittles()//creates row with order item details in cart table if skittles snack is ordered
-{
-    printCart("skittles",150)
-};
-
-    if (localStorage.almond > 0) {
-        almonds();
-    }
-
-    if (localStorage.bananaChips > 0) {
-        bananaChips();
-    }
-
-    if (localStorage.bigFoot > 0) {
-        bigFoot();
-    }
-
-    if (localStorage.cheetos > 0) {
-        cheetos();
-    }
-
-    if (localStorage.cheezit > 0) {
-        cheezIt();
-    }
-
-    if (localStorage.lays > 0) {
-        lays();
-    }
-
-    if (localStorage.fritos > 0) {
-        fritos();
-    }
-
-    if (localStorage.plantainChips > 0) {
-       plantainChips();
-    }
-
-    if (localStorage.pringles > 0) {
-        pringles();
-    }
-
-    if (localStorage.redhot > 0) {
-        redHot();
-    }
-
-    if (localStorage.ruffles > 0) {
-        ruffles();
-    }
-
-    if (localStorage.skittles > 0) {
-        skittles();
-    }
+if (localStorage.skittles > 0) {
+    printCart("skittles",150);
+}
 
 //access the html table and insert row with grand total of order
 var table = document.getElementById("cart");
