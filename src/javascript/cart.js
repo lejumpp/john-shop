@@ -2,9 +2,9 @@
 var orderTotal=0;
 
 /**
-*@function Validates checkout form entry and creates order after checkout
-*@param {obj} form- this is used to access the text fields that is present on the cart.html page
-*/
+ *@function Validates checkout form entry and creates order after checkout
+ *@param {obj} form- this is used to access the text fields that is present on the cart.html page
+ */
 function checkout(form)
 {
     //check if form entries are empty
@@ -26,9 +26,9 @@ function checkout(form)
 };
 
 /**
-*@function creates an order object of the order details and the student information containted in studentObj
-*@param {object} studentObj- this parameter holds the student informaiton which is ID, First and Last name and location
-*/
+ *@function creates an order object of the order details and the student information containted in studentObj
+ *@param {object} studentObj- this parameter holds the student informaiton which is ID, First and Last name and location
+ */
 function createOrderObj(studentObj)
 {
     var orderObjTemp={
@@ -38,10 +38,10 @@ function createOrderObj(studentObj)
 };
 
 /**
-*@function creates student object by accessing the info from the test fields on the cart.html page
-*@param form- used to get the info from the text fields
-*@return returns studentObj
-*/
+ *@function creates student object by accessing the info from the test fields on the cart.html page
+ *@param form- used to get the info from the text fields
+ *@return returns studentObj
+ */
 function createStudentObj(form)
 {
     var studentObj = {
@@ -58,27 +58,32 @@ function listofOrdersFunction(orderObj)//function to store the student object
         localStorage.removeItem('orderDetails');
 };
 
+/**
+ * adds a particular item order detail to an array which is called orderDetails
+ * @param {object} orderDetail orderDetail which contains snack name, amount and subtotal
+ * @function accepts an object of order and parses into to be stored in orderDetails
+ *           after being parsed it is then pushed into the array orderDetails and saved
+ *           in localStorage using stringify
+ */
 function addToOrderDetail(orderDetail)
 {
     var orderDetails = JSON.parse(localStorage.getItem('orderDetails')) || [];
         orderDetails.push(orderDetail); 
         localStorage.setItem("orderDetails",JSON.stringify(orderDetails));
-    
 };
 
 /**
-*@function
-*@param {integer} quantity- total number of a particular item
-*@param {integer} price- price of a particular item
-*@function Caculates subtotal for particular item and grand total of the entire cart
-*@return {integer} total- returns subtotal calculated by quantity*price
-*/
+ *@function
+ *@param {integer} quantity- total number of a particular item
+ *@param {integer} price- price of a particular item
+ *@function Caculates subtotal for particular item and grand total of the entire cart
+ *@return {integer} total- returns subtotal calculated by quantity*price
+ */
 function calculateTotal(qunatity,price)
 {
     var total=qunatity*price;
     window.orderTotal=window.orderTotal+total;
     return total;
-    
 };
 
 function printCart(itemName, price)
