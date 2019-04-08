@@ -1,6 +1,10 @@
 //Counter for grand total of order
 var orderTotal=0;
-//validates checkout form entry and creates order after checkout
+
+/**
+*@function Validates checkout form entry and creates order after checkout
+*@param {obj} form- this is used to access the text fields that is present on the cart.html page
+*/
 function checkout(form)
 {
     //check if form entries are empty
@@ -21,6 +25,10 @@ function checkout(form)
     }
 };
 
+/**
+*@function creates an order object of the order details and the student information containted in studentObj
+*@param {object} studentObj- this parameter holds the student informaiton which is ID, First and Last name and location
+*/
 function createOrderObj(studentObj)
 {
     var orderObjTemp={
@@ -29,6 +37,11 @@ function createOrderObj(studentObj)
     listofOrdersFunction(orderObjTemp);   
 };
 
+/**
+*@function creates student object by accessing the info from the test fields on the cart.html page
+*@param form- used to get the info from the text fields
+*@return returns studentObj
+*/
 function createStudentObj(form)
 {
     var studentObj = {
@@ -53,6 +66,13 @@ function addToOrderDetail(orderDetail)
     
 };
 
+/**
+*@function
+*@param {integer} quantity- total number of a particular item
+*@param {integer} price- price of a particular item
+*@function Caculates subtotal for particular item and grand total of the entire cart
+*@return {integer} total- returns subtotal calculated by quantity*price
+*/
 function calculateTotal(qunatity,price)
 {
     var total=qunatity*price;
