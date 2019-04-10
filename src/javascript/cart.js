@@ -2,8 +2,8 @@
 var orderTotal=0;
 
 /**
- *@function Validates checkout form entry and creates order after checkout
- *@param {obj} form- this is used to access the text fields that is present on the cart.html page
+ * @function Validates checkout form entry and creates order after checkout
+ * @param {obj} form- this is used to access the text fields that is present on the cart.html page
  */
 function checkout(form)
 {
@@ -26,8 +26,8 @@ function checkout(form)
 };
 
 /**
- *@function creates an order object of the order details and the student information containted in studentObj
- *@param {object} studentObj- this parameter holds the student informaiton which is ID, First and Last name and location
+ * @function creates an order object of the order details and the student information containted in studentObj
+ * @param {object} studentObj- this parameter holds the student informaiton which is ID, First and Last name and location
  */
 function createOrderObj(studentObj)
 {
@@ -38,9 +38,9 @@ function createOrderObj(studentObj)
 };
 
 /**
- *@function creates student object by accessing the info from the test fields on the cart.html page
- *@param form- used to get the info from the text fields
- *@return returns studentObj
+ * @function creates student object by accessing the info from the test fields on the cart.html page
+ * @param form- used to get the info from the text fields
+ * @return returns studentObj
  */
 function createStudentObj(form)
 {
@@ -50,6 +50,10 @@ function createStudentObj(form)
     return studentObj;
 };
 
+/**
+ * @param {object} orderObj which contains the information of the student order and student information
+ * @function funcion to store a student order which contains their order and student information
+ */
 function listofOrdersFunction(orderObj)//function to store the student object
 {
     var listOfOrders = JSON.parse(localStorage.getItem('listOfOrders')) || [];
@@ -73,11 +77,11 @@ function addToOrderDetail(orderDetail)
 };
 
 /**
- *@function
- *@param {integer} quantity- total number of a particular item
- *@param {integer} price- price of a particular item
- *@function Caculates subtotal for particular item and grand total of the entire cart
- *@return {integer} total- returns subtotal calculated by quantity*price
+ * @function
+ * @param {integer} quantity- total number of a particular item
+ * @param {integer} price- price of a particular item
+ * @function Caculates subtotal for particular item and grand total of the entire cart
+ * @return {integer} total- returns subtotal calculated by quantity*price
  */
 function calculateTotal(qunatity,price)
 {
@@ -86,6 +90,11 @@ function calculateTotal(qunatity,price)
     return total;
 };
 
+/**
+ * @function Printing order items to the cart home page
+ * @param {string} itemName variable name of the item in localstorage
+ * @param {number} price    price of particular item
+ */
 function printCart(itemName, price)
 {
     var table = document.getElementById("cart");
