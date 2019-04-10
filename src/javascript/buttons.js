@@ -1,7 +1,8 @@
 /**
 *@author Nicholas Jumpp & Kimone V. Roper I
-*@function This is a description of the script that is ran on the homepage. This scripts collects all buttons with the class name "btnsnackitem" and stores them in a variable called btns. If one of the buttons is clicked on the homepage an alert is displayed and the item selected is incremented and stored in localstorage.
-*
+*@function This is a description of the script that is ran on the homepage.
+*This scripts collects all buttons with the class name "btnsnackitem" and stores them in a variable called btns.
+*If one of the buttons is clicked on the homepage an alert is displayed and the item selected is incremented and stored in localstorage.
 */
 var btns= document.getElementsByClassName("btnsnackitem");
     for(var i=0; i<btns.length; i++)
@@ -14,6 +15,3 @@ var btns= document.getElementsByClassName("btnsnackitem");
         localStorage.setItem(this.getAttribute("id"),amt);
         });
     }
-    
-    
-

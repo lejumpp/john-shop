@@ -5,5 +5,13 @@
   "main": "src/home.html",
   "repository": "https://lejumpp:Tooltime1996@github.com/lejumpp/john-shop.git",
   "author": "lejumpp & kimone9",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^24.7.1"
+  }
+    {
+  "scripts": {
+    "test": "jest"
+  }
+}
 }
