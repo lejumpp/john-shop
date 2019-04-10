@@ -10,7 +10,10 @@ var listOfOrders = JSON.parse(localStorage.getItem("listOfOrders"));
 //initialize variable to hold panel id to be modified to yeild a unique id for each panel
 var panelId= "panel";
 
-//function to display hidden panel with order details
+
+/**
+ * @function function to display hidden panel with order details
+ */
 function showOrder() {
   var myPanelId = this.getAttribute('data-panel-id');
   var x = document.getElementById(myPanelId);
@@ -25,21 +28,29 @@ function showOrder() {
 
 }
 
-//iterate through all orders in local storage
+
+/**
+ *iterate through all orders in local storage
+ */
 listOfOrders.forEach(function (element) {
 
 
-   //modify panel id to be unique for each order
+   /**
+    * modify panel id to be unique for each order
+    */
     panelId = panelId+2;
-
-    //create P element to hold student info for each order
+    /**
+     * create P element to hold student info for each order
+     */
     var order = document.createElement("P");
     order.setAttribute('data-panel-id', panelId);
     order.class = "flip";
 	order.align = "center";
     order.style.background = "rgba(0, 128, 128, 0.5)";
 
-    //creates text for P element and adds it
+    /**
+     * creates text for P element and adds it
+     */
     var otext = document.createTextNode("Name: "+element.studentInfo.firstName+" "+element.studentInfo.lastName+"\t Location: "+element.studentInfo.location);
     order.appendChild(otext);
     //adds P element to html document
@@ -48,7 +59,9 @@ listOfOrders.forEach(function (element) {
 
 
 
-   //creates hidden DIV element to hold order details for each order
+   /**
+    * creates hidden DIV element to hold order details for each order
+    */
     var panel = document.createElement("DIV");
     panel.id = panelId;
     panel.style.display= "none";
