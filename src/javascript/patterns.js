@@ -16,23 +16,27 @@ function getItemAmt(name)
     //var _self.this;
     var amt=0;
     if(name in localStorage)
-        {
-            amt = localStorage.getItem(name);
-        }
+    {
+        amt = localStorage.getItem(name);
+    }
     else{
         localStorage.setItem(name,amt);
     }
     return amt;
 }
 
-function snackController()
+function snackController(dbType)
 {
     var _self=this;
 
-    _self.db=createDBFactory("localStorage");
+    _self.db=createDBFactory(dbType);
 
     _self.getItemAmt=function(snackName){
         return _self.db.get(snackName);
+    }
+
+    _self.setItemAmt=function(snackName,amt){
+        _self.db.set(snackName,amt)
     }
 }
 
@@ -49,19 +53,6 @@ function LocalStorageDB()
         localStorage.setItem(key,value);
     }
 };
-
-//var db= new LocalStorageDB();
-//db.get("key");
-
-/*function createDBFactory(dbType)
-{
-    if(dbType=="localStorage"){
-        return new LocalStorageDB();
-    }
-    else
-        throw new error("No other db exist");
-};*/
-
 
 //factory
 function createDBFactory(dbType){
@@ -84,4 +75,3 @@ function singleton()
         }
 };
 
-var db=createDBFactory("localStorage");
