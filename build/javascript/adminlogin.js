@@ -1,0 +1,1 @@
+function check(e){"nicholas"==e.userid.value&&"tooltime1"==e.pswrd.value?(alert("Login Successful Nicholas"),window.location.href="adminpage.html"):"kimone"==e.userid.value&&"despise"==e.pswrd.value?(alert("Login Successful Kimone"),window.location.href="adminpage.html"):alert("incorrect password or username")}

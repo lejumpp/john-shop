@@ -1,0 +1,1 @@
+for(var controller=new snackController,btns=document.getElementsByClassName("btnsnackitem"),i=0;i<btns.length;i++){var btn=btns[i];btn.addEventListener("click",function(){alert("Item Added to Cart: "+this.getAttribute("id"));var t=controller.getItemAmt(this.getAttribute("id"))||0;t++,localStorage.setItem(this.getAttribute("id"),t)})}
