@@ -6,12 +6,13 @@
  */
 function check(form)
 {
-    if(form.userid.value == "nicholas" && form.pswrd.value=="tooltime1")
+    var cred= new credentials(form);
+    if(cred.getUsername() == "nicholas" && cred.getPassword() =="tooltime1")
     {
         alert("Login Successful Nicholas");
         window.location.href = '\adminpage.html'
     }
-    else if(form.userid.value == "kimone" && form.pswrd.value=="despise")
+    else if(cred.getUsername() == "kimone" && cred.getPassword() =="despise")
     {
         alert("Login Successful Kimone");
         window.location.href = '\adminpage.html'
@@ -19,5 +20,19 @@ function check(form)
     else
     {
         alert("incorrect password or username");
+    }
+};
+
+function credentials(form)
+{
+    var _self=this;
+    _self.username=form.userid.value;
+    _self.password=form.pswrd.value;
+
+    _self.getUsername = function(){
+        return _self.username;
+    }
+    _self.getPassword = function(){
+        return _self.password;
     }
 };

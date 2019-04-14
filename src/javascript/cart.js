@@ -120,51 +120,52 @@ function printCart(itemName, price)
 
 };
 
-if (localStorage.almond > 0) {
+var controller = new snackController("localStorage");
+if (controller.getItemAmt("almond") > 0) {
     printCart("almond",80);
 }
 
-if (localStorage.bananaChips > 0) {
+if (controller.getItemAmt("bananaChips") > 0) {
     printCart("bananaChips",70);
 }
 
-if (localStorage.bigFoot > 0) {
+if (controller.getItemAmt("bigFoot") > 0) {
      printCart("bigFoot",50);
 }
 
-if (localStorage.cheetos > 0) {
+if (controller.getItemAmt("cheetos") > 0) {
     printCart("cheetos",120);
 }
 
-if (localStorage.cheezit > 0) {
+if (controller.getItemAmt("cheezit") > 0) {
     printCart("cheezit",100);
 }
 
-if (localStorage.lays > 0) {
+if (controller.getItemAmt("lays") > 0) {
     printCart("lays",150);
 }
 
-if (localStorage.fritos > 0) {
+if (controller.getItemAmt("fritos") > 0) {
     printCart("fritos",130);
 }
 
-if (localStorage.plantainChips > 0) {
+if (controller.getItemAmt("plantainChips") > 0) {
    printCart("plantainChips",100);
 }
 
-if (localStorage.pringles > 0) {
+if (controller.getItemAmt("pringles") > 0) {
     printCart("pringles",180);
 }
 
-if (localStorage.redhot > 0) {
+if (controller.getItemAmt("redhot") > 0) {
     printCart("redhot",90);
 }
 
-if (localStorage.ruffles > 0) {
+if (controller.getItemAmt("ruffles") > 0) {
     printCart("ruffles",120);
 }
 
-if (localStorage.skittles > 0) {
+if (controller.getItemAmt("skittles") > 0) {
     printCart("skittles",150);
 }
 
