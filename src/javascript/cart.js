@@ -89,6 +89,7 @@ function calculateTotal(qunatity,price)
     window.orderTotal=window.orderTotal+total;
     return total;
 };
+//module.exports = calculateTotal();
 
 /**
  * @function Printing order items to the cart home page
