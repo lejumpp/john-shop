@@ -1,15 +1,13 @@
 //sudo class for snack
-function Snack(id, name, price)
+function Snack(name, quantity)
 {
     var _self=this;
-    _self.id = id || 0;
     _self.name = name || "";
-    _self.price = price || 0.0;
+    _self.quantity = quantity || 0;
     _self.getName = function(){
         return _self.name;
     }
 };
-var snack = new Snack(3, "Big Foot", 60);
 
 //get the stock amount by the name
 
@@ -30,6 +28,7 @@ function getItemAmt(name)
 function snackController()
 {
     var _self=this;
+
     _self.db=createDBFactory("localStorage");
 
     _self.getItemAmt=function(snackName){
@@ -37,7 +36,7 @@ function snackController()
     }
 }
 
-
+//model
 function LocalStorageDB()
 {
     var _self=this;
@@ -54,28 +53,35 @@ function LocalStorageDB()
 //var db= new LocalStorageDB();
 //db.get("key");
 
-function createDBFactory(dbType)
+/*function createDBFactory(dbType)
 {
     if(dbType=="localStorage"){
         return new LocalStorageDB();
     }
     else
         throw new error("No other db exist");
+};*/
+
+
+//factory
+function createDBFactory(dbType){
+    if(dbType=="localStorage"){
+        return singleton();
+    }
+    else throw new Error("No other db exists");
 }
 
-//var DB_INSTANCE=null;
-
+var DB_INSTANCE=null;
 //singleton
-/*fucntion createDBFactory(dbType){
-    if(dbType=="localStorage"){
-        if(DB_INSTANCE== null){
-            DB_INSTANCE=new LocalStorageDb();
+function singleton()
+{
+    if(DB_INSTANCE== null){
+            DB_INSTANCE=new LocalStorageDB();
+            return DB_INSTANCE;
         }
         else{
             return DB_INSTANCE;
         }
-    }
-    else throw new Error("No other db exists");
-}*/
+};
 
-//var db=createDbFactory("localStorage");
+var db=createDBFactory("localStorage");

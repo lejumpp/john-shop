@@ -12,12 +12,7 @@ var btns= document.getElementsByClassName("btnsnackitem");
         btn.addEventListener("click",function(){
         alert("Item Added to Cart: "+this.getAttribute("id"));
         var amt=controller.getItemAmt(this.getAttribute("id")) || 0;
-        //var amt=localStorage.getItem(this.getAttribute("id")) || 0;
-
             amt++;
         localStorage.setItem(this.getAttribute("id"),amt);
         });
     }
-/*
-
-*/
