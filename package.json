@@ -3,15 +3,18 @@
   "version": "1.0.0",
   "description": "john snack shop",
   "main": "src/home.html",
-  "repository": "https://lejumpp:Tooltime1996@github.com/lejumpp/john-shop.git",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+      "type": "git",
+      "url": "https://lejumpp:Tooltime1996@github.com/lejumpp/john-shop.git"
+  },
   "author": "lejumpp & kimone9",
   "license": "MIT",
   "devDependencies": {
     "jest": "^24.7.1"
   }
-    {
-  "scripts": {
-    "test": "jest"
-  }
-}
+
+
 }
